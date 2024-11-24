@@ -706,3 +706,9 @@ span3{
 .highlight {
         color: #007bff; /* Blue accent for the word 'Lead' */
 }
+
+#parainsta{
+    font-family:monospace;
+    letter-spacing: 2px;
+    text-align: center;
+}

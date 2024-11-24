@@ -17,7 +17,9 @@ const message = document.getElementById("message");
 
 const cont3 = document.getElementById("container3");
 const logo = document.getElementById("companylogo");
+const touchme = document.getElementById("touchme");
 
     logo.addEventListener("click" , function(event){
         cont3.style.display = "block";
+        touchme.style.display = "none";
     })
