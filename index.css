@@ -59,10 +59,6 @@ header {
     padding: 2rem 0;
 }
 
-#mainlogo{
-
-}
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -212,7 +208,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-    position: fixed;
     width: 100%;
     bottom: 0;
 }
@@ -275,7 +270,6 @@ span{
 
  #container{
     background-color:transparent;
-    width: 350px;
     text-align: left;
     margin-left: 15px;
  }
@@ -303,16 +297,14 @@ span{
  }
 
  #para0{
-    letter-spacing: 2px;
-    text-align:end;
-    margin-right: 20px;
+    letter-spacing: 4px;
+    justify-content: center;
  }
 
  #para00{
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     font-weight: 700;
-    text-align: end;
-    margin-right: 20px;
+    justify-content: center;
  }
 
  #title0{
