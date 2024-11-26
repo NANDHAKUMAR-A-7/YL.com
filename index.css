@@ -9,23 +9,6 @@
     display: none;
 }
 
-#scroll1{
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        scale: 0.5;
-        clip-path: insert(100% 100% 0 0);
-    }
-    to{
-        opacity: 1;
-        clip-path: inset(0 0 0 0);
-    }
-}
 
 #contact{
     animation: appear linear;
@@ -302,7 +285,6 @@ span{
  }
 
  #para00{
-    letter-spacing: 5px;
     font-weight: 700;
     justify-content: center;
  }
@@ -746,4 +728,107 @@ span3{
     text-align: left;
     margin-left: 35px;
     width: 330px
+}
+
+.main-div{
+    background-color: black;
+    margin-left: 40px;
+    padding: 5px;
+    overflow-y: auto;
+    width: 400px;
+    height: 360px;
+}
+
+#par1{
+    z-index: 0;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes appear {
+from {
+    opacity: 0;
+    scale: 0.1;
+    clip-path: insert(100% 100% 0 0);
+}
+to{
+    opacity: 1;
+    clip-path: insert(0 0 0 0);
+}
+}
+
+#par2{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    }
+    
+    @keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.1;
+        clip-path: insert(100% 100% 0 0);
+    }
+    to{
+        opacity: 1;
+        clip-path: insert(100% 100% 0 0);
+    }
+}
+
+#par3{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    }
+    
+    @keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.1;
+        clip-path: insert(100% 100% 0 0);
+    }
+    to{
+        opacity: 1;
+        clip-path: insert(100% 100% 0 0);
+    }
+}
+
+.par1{
+    font-family:s Arial, sans-serif;
+    text-align: left;
+}
+
+.par2{
+    margin-right: 10px;
+    font-family:  Arial, sans-serif;
+    text-align: right;
+}
+
+.par3{
+    font-family:  Arial, sans-serif;
+    text-align: left;
+}
+
+#para00{
+    white-space: nowrap;
+    overflow:hidden;
+    border-right: 3px solid rgb(6, 6, 6);
+    width: 0;
+    animation: typing 1s steps(22) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent ;
+    }
 }
