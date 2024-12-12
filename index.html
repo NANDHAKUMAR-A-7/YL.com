@@ -107,7 +107,19 @@
     <footer>
         <p id="footer1">&copy; 2024 YoungLead(YL). All rights reserved.</p>
     </footer>
-    <script src="/YL.com/main.js"></script>
+<script>
+             if('serviceWorker' in navigator)
+ {
+     navigator.serviceWorker.register('/sw.js').then((resp)=>{
+        console.log("resp",resp)
+     }).catch((e)=>{
+         console.error(e)
+     })
+ }
+ else{
+     console.error("sw not working")
+ }
+</script>
 </body>
 
 </html>
