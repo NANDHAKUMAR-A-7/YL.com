@@ -2,21 +2,21 @@ const CACHE_NAME = "static_cache"
 const STATIC_ASSESTS = [
     '/index.html',
     '/index.css'
-]
+];
 
 async function preCache() {
     const cache = await caches.open(CACHE_NAME)
     return cache.addAll(STATIC_ASSESTS)
-}
+};
 
 self.addEventListener("install",event => {
     console.log("(sw) installed");
     event.waitUntill(preCache())
-})
+});
 
 self.addEventListener("activate",event => {
     console.log("(sw) activated");
-})
+});
 
 async function fetchAssests(event) {
     try {
@@ -26,12 +26,12 @@ async function fetchAssests(event) {
         const cache = await caches.open(CACHE_NAME)
         return cache.match(event.requst)
     }
-}
+};
 
 self.addEventListener("fetch",event => {
     console.log("(sw) fetched");
     event.respondWith(fetchAssests(event))
-})
+});
 
 // add event listener for send button 
 
