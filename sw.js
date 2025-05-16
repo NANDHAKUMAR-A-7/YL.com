@@ -1,36 +1,25 @@
-const CACHE_NAME = "static_cache"
-const STATIC_ASSESTS = [
-    '/index.html',
-    '/index.css'
-];
+//add service worker connection
 
-async function preCache() {
-    const cache = await caches.open(CACHE_NAME)
-    return cache.addAll(STATIC_ASSESTS)
-};
-
-self.addEventListener("install",event => {
-    console.log("(sw) installed");
-    event.waitUntill(preCache())
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('pwa-cache').then(function(cache) {
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/manifest.json',
+        '/icon.png'
+      ]);
+    })
+  );
 });
 
-self.addEventListener("activate",event => {
-    console.log("(sw) activated");
-});
-
-async function fetchAssests(event) {
-    try {
-        const response = await fetch(event.request)
-        return response
-    } catch (err) {
-        const cache = await caches.open(CACHE_NAME)
-        return cache.match(event.requst)
-    }
-};
-
-self.addEventListener("fetch",event => {
-    console.log("(sw) fetched");
-    event.respondWith(fetchAssests(event))
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        return response || fetch(event.request);
+      })
+  );
 });
 
 // add event listener for send button 
